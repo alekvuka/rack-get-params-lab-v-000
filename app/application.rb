@@ -26,6 +26,7 @@ class Application
     elsif req.path.match(/add/)
       if @@items.include?(req.params["item"])
         @@cart << req.params["item"]
+        binding.pry
       else
         resp.write "We don't have that item"
       end
