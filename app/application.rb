@@ -9,9 +9,15 @@ class Application
 
     if req.path.match(/items/)
       @@items.each do |item|
-        resp.write "#{item}\n"
+        resp.write ""Your cart is empty""
       end
     elsif req.path.match(/cart/)
+
+      if @@cart.empty?
+        resp.write "#{item}\n"
+
+
+
       @@cart.each do |item|
         resp.write "#{item}\n"
       end
