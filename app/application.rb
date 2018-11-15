@@ -24,7 +24,10 @@ class Application
       resp.write handle_search(search_term)
 
     elsif req.path.match(/add/)
-      
+      if @@items.include?(req.param["item"])
+        @@cart << req.param["item"]
+      else
+        resp.write "We don't have that item"
 
 
     else
