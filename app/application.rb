@@ -29,7 +29,7 @@ class Application
       #binding.pry
       if @@items.include?(req.params["item"])
         @@cart << req.params["item"]
-        esp.write "Added #{req.params["item"]}"
+        resp.write "Added #{req.params["item"]}"
       else
         resp.write "We don't have that item"
       end
