@@ -26,9 +26,10 @@ class Application
       resp.write handle_search(search_term)
 
     elsif req.path.match(/add/)
-      #xbinding.pry
+      #binding.pry
       if @@items.include?(req.params["item"])
         @@cart << req.params["item"]
+        esp.write "Added #{req.params["item"]}"
       else
         resp.write "We don't have that item"
       end
